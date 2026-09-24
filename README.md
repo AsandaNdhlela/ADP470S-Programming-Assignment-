@@ -71,6 +71,7 @@ Fibonacci
 •	Recursive (naive): O(2ⁿ) time,  the call tree branches in two at every step, and the same subproblems (e.g. fib(n-2)) get recomputed many times over. Space is O(n), since only the depth of the tree matters for stack usage, not its total size.
 •	Iterative: O(n) time, O(1) space, it just walks forward once, keeping two running values.
 •	Comparison: this is the sharper contrast, naive recursive Fibonacci is exponential and becomes impractical past roughly n = 40, while the iterative version handles large n instantly. This is a good place in your report to mention that memorization (top-down) or dynamic programming (bottom-up) would bring the recursive approach back down to O(n) time, worth a sentence even though the brief only asks for the plain recursive version.
+
 Part B: Selection Sort, Quick Sort (Lomuto partition), Heap Sort , Binary Search recursive and iterative versions. Sort Benchmark, runs all three sorts on identical random datasets from n=100 to n=20,000, verifies correctness, and exports a CSV 
 What's in each file:
 •	SortingAlgorithms.java: Selection Sort, Quick Sort (Lomuto partition), Heap Sort
@@ -117,6 +118,7 @@ For your report:
 •	The worst case is a real, common scenario, not just a theoretical curiosity: inserting already-sorted data (e.g. reading in a sorted file or IDs that arrive in increasing order) makes every new node attach as the rightmost child, degenerating the tree into what is structurally a linked list, height n−1, and every operation becomes O(n).
 •	The timing confirms it in practice: searches on the degenerate tree took roughly 15× longer than on the balanced one, for the exact same number of elements, a good concrete number to cite in your report rather than just stating the Big-O.
 •	Worth a closing line in your report: this is exactly the motivation for self-balancing trees (AVL, Red-Black) which guarantee O(log n) worst-case by rebalancing after every insert/delete, outside this assignment's scope, but shows you understand why they exist.
+
 Part E: Graphs
 What's here:
 •	GraphAdjMatrix.java: undirected graph on an adjacency matrix, with recursive dfs, queue-based bfs, and shortestPath (BFS with parent-pointer backtracking to reconstruct the actual route, not just the hop count)
